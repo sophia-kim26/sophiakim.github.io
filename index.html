@@ -1,195 +1,154 @@
-:root {
-  --paper: #FAF7F0;
-  --panel: #F1ECE0;
-  --ink: #1C2230;
-  --ink-soft: #4A5163;
-  --rule: #D8D0BC;
-  --gold: #B8842E;
-  --blue: #2B4570;
-  --mono: 'IBM Plex Mono', ui-monospace, monospace;
-  --serif: 'Source Serif 4', Georgia, serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophia Kim — Programmer</title>
+<meta name="description" content="Sophia Kim, CS student at UC Berkeley. Portfolio of projects and work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
 
-* { box-sizing: border-box; }
+<header>
+  <div class="wrap nav-row">
+    <div class="nav-mark">sophia<span>.</span>kim</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-html { scroll-behavior: smooth; }
+<main>
+  <section class="hero wrap">
+    <p class="hero-kicker">CS student, UC Berkeley</p>
+    <h1>Sophia Kim builds things that work, and tries to understand why.</h1>
+    <p class="lede">
+      <!-- Edit: swap in your own one-line pitch -->
+      I'm a computer science student who likes turning half-formed ideas into working
+      software — mostly backend systems, sometimes whatever's interesting that week.
+    </p>
+    <div class="hero-links">
+      <a href="https://github.com/sophia-kim26" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/sophia-kim-534452341/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:sophia.el.kim@gmail.com">Email</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </section>
 
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--serif);
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
+  <section id="about" class="about wrap">
+    <p class="section-label">01 — About</p>
+    <h2>About me</h2>
+    <p>
+      I'm a computer science student at UC Berkeley who likes taking a project from a
+      messy real-world problem to something people actually use. I've built a full-stack
+      attendance system for a school of 600+ students and led a small team to ship a
+      game on Steam — I like the parts of software that touch real users as much as the
+      code itself.
+    </p>
+    <p>
+      Before Berkeley, I split my time between programming, orchestra, and a cystic
+      fibrosis research project, so I tend to bring a fairly wide-angle, detail-oriented
+      approach to whatever I'm building. Currently looking for internship opportunities
+      where I can keep working across the stack.
+    </p>
+  </section>
 
-a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { color: var(--gold); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  <section id="projects" class="wrap">
+    <p class="section-label">02 — Projects</p>
+    <h2>Selected projects</h2>
 
-.wrap {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 0 28px;
-}
+    <div class="project">
+      <div class="project-tag">React · Node.js · PostgreSQL</div>
+      <div>
+        <h3>Korean School of NJ — Attendance App</h3>
+        <p>
+          A full-stack log-in and analytics system built with a team of 4, replacing a
+          paper process and giving 70+ TAs and 600+ students an automated way to track
+          volunteer hours — with location-verified clock-ins and a personal dashboard.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/sophia-kim26/KoreanSchoolApp" target="_blank" rel="noopener">Code</a>
+          <a href="https://njks-service-hours.vercel.app/" target="_blank" rel="noopener">Live demo</a>
+        </div>
+      </div>
+    </div>
 
-/* ---- Header / nav ---- */
-header {
-  border-bottom: 1px solid var(--rule);
-  position: sticky;
-  top: 0;
-  background: rgba(250, 247, 240, 0.92);
-  backdrop-filter: blur(6px);
-  z-index: 10;
-}
-.nav-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0;
-  font-family: var(--mono);
-  font-size: 0.85rem;
-}
-.nav-mark { color: var(--ink); font-weight: 500; }
-.nav-mark span { color: var(--gold); }
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 22px;
-  margin: 0;
-  padding: 0;
-}
-nav a { color: var(--ink-soft); }
-nav a:hover { color: var(--gold); }
+    <div class="project">
+      <div class="project-tag">Game dev · Git / Perforce</div>
+      <div>
+        <h3>Route 88</h3>
+        <p>
+          A rhythm parkour game I directed and produced with a 6-member team at CMU's
+          National High School Game Academy, then published on Steam — handling
+          builds, playtesting, and the store launch myself.
+        </p>
+        <div class="project-links">
+          <a href="https://store.steampowered.com/app/4138280/Route_88/" target="_blank" rel="noopener">Steam page</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ---- Hero ---- */
-.hero {
-  padding: 72px 0 56px;
-  border-bottom: 1px solid var(--rule);
-}
-.hero-kicker {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  color: var(--blue);
-  margin: 0 0 14px;
-}
-.hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
-  line-height: 1.08;
-  margin: 0 0 18px;
-  font-weight: 600;
-  max-width: 14ch;
-}
-.hero p.lede {
-  font-size: 1.15rem;
-  color: var(--ink-soft);
-  max-width: 46ch;
-  margin: 0 0 28px;
-}
-.hero-links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  font-family: var(--mono);
-  font-size: 0.9rem;
-}
+  <section id="skills" class="wrap">
+    <p class="section-label">03 — Skills</p>
+    <h2>Skills & tools</h2>
+    <div class="skills-grid">
+      <div class="skills-group">
+        <h3>Languages</h3>
+        <ul>
+          <li>Python</li>
+          <li>Java</li>
+          <li>C</li>
+          <li>Scheme</li>
+          <li>JavaScript</li>
+          <li>SQL</li>
+          <li>HTML / CSS</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h3>Frameworks</h3>
+        <ul>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Express</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h3>Tools</h3>
+        <ul>
+          <li>Git / GitHub</li>
+          <li>Perforce</li>
+          <li>VS Code</li>
+          <li>Vercel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-/* ---- Section shell ---- */
-section { padding: 56px 0; border-bottom: 1px solid var(--rule); }
-section:last-of-type { border-bottom: none; }
-.section-label {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--gold);
-  margin: 0 0 8px;
-}
-h2 {
-  font-size: 1.7rem;
-  font-weight: 600;
-  margin: 0 0 24px;
-}
+  <footer id="contact" class="wrap">
+    <p class="section-label">04 — Contact</p>
+    <h2>Get in touch</h2>
+    <p>
+      Open to internships and interesting side projects. The fastest way to reach me
+      is email.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:sophia.el.kim@gmail.com">sophia.el.kim@gmail.com</a>
+      <a href="https://github.com/sophia-kim26" target="_blank" rel="noopener">github.com/sophia-kim26</a>
+      <a href="https://www.linkedin.com/in/sophia-kim-534452341/" target="_blank" rel="noopener">linkedin.com/in/sophia-kim</a>
+    </div>
+    <p class="foot-note">© 2026 Sophia Kim · Built for GitHub Pages</p>
+  </footer>
+</main>
 
-/* ---- About ---- */
-.about p { max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; }
-.about p + p { margin-top: 14px; }
-
-/* ---- Projects ---- */
-.project {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 24px;
-  padding: 22px 0;
-  border-top: 1px solid var(--rule);
-}
-.project:first-of-type { border-top: none; padding-top: 0; }
-.project-tag {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  padding-top: 4px;
-}
-.project h3 {
-  margin: 0 0 6px;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-.project p {
-  margin: 0 0 10px;
-  color: var(--ink-soft);
-  max-width: 56ch;
-}
-.project-links {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  display: flex;
-  gap: 16px;
-}
-
-@media (max-width: 560px) {
-  .project { grid-template-columns: 1fr; gap: 6px; }
-}
-
-/* ---- Skills ---- */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 28px;
-}
-.skills-group h3 {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  color: var(--blue);
-  font-weight: 500;
-  margin: 0 0 10px;
-}
-.skills-group ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  color: var(--ink-soft);
-}
-.skills-group li { padding: 3px 0; }
-
-/* ---- Contact / footer ---- */
-footer {
-  padding: 48px 0 60px;
-}
-footer h2 { margin-bottom: 12px; }
-footer p { color: var(--ink-soft); max-width: 50ch; margin: 0 0 24px; }
-.contact-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  font-family: var(--mono);
-  font-size: 0.95rem;
-}
-.foot-note {
-  margin-top: 48px;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--ink-soft);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
+</body>
+</html>
